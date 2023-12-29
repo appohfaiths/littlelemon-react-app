@@ -13,7 +13,7 @@ export const Nav = () => {
                 <li><a href="/">Order Online</a></li>
                 <li><a href="/">Log In</a></li>
       </ul>
-      <img src='/assets/images/Hamburger_Menu.svg' alt='Menu button' className='top-nav-menu-button'/>
+      <img src='/assets/icons/Hamburger_Menu.svg' alt='Menu button' className='top-nav-menu-button'/>
     </nav>
   )
 }

@@ -1,8 +1,11 @@
 import React from 'react'
 import './styles.css'
+import { HighlightsSection } from './HighlightsSection'
 
 export const Main = () => {
   return (
-    <main className='main'>Main</main>
+    <main className='main'>
+      <HighlightsSection />
+    </main>
   )
 }
