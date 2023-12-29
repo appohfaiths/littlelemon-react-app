@@ -5,7 +5,7 @@ export const Nav = () => {
   return (
       <nav className='top-nav'>
           <img src='/assets/images/Logo.svg' alt='Little Lemon Logo' className='top-nav-logo'/>
-          <ul className='top-nav-links'>
+          <ul className='top-nav-links section-title'>
                 <li><a href="/">Home</a></li>
                 <li><a href="/">About</a></li>
                 <li><a href="/">Menu</a></li>

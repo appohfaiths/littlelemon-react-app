@@ -49,6 +49,10 @@
     height: 25vh;
 }
 
+.header h1, h2, p {
+    color: var(--secondary-white);
+}
+
 /* Main.js */
 .main {
     display: grid;
