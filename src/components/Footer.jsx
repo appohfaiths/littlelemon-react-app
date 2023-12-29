@@ -1,10 +1,11 @@
 import React from 'react'
+import './styles.css'
 
 export const Footer = () => {
   return (
-      <footer>
-          <img src="/assets/images/logo_footer.png" alt="little lemon logo" />
-          <section>
+      <footer className='footer'>
+      <section className='footer-logo-links'>
+        <img src="/assets/images/logo_footer.png" alt="little lemon logo" />
               <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/">About</a></li>
