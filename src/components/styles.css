@@ -180,7 +180,7 @@
 /* Highlights Section */
 .highlights-section {
 }
-.highlights {
+.highlights, .testimonials {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
@@ -195,8 +195,33 @@
 }
 
 @media screen and (max-width: 768px) {
-    .highlights {
+    .highlights, .testimonials {
         grid-template-columns: 1fr;
         place-items: center;
     }
+}
+
+/* Testimonials Card Section */
+.testimonial-card {
+    height: 300px;
+    width: 250px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: var(--secondary-white);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
+
+.testimonial-rating, .testimonial-profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
 }
