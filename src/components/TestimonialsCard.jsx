@@ -7,7 +7,7 @@ export const TestimonialsCard = ({ data }) => {
   return (
     <aside className='testimonial-card'>
       <div className='testimonial-rating'>
-        <p>Rating</p>
+        <p className='lead-text'>Rating</p>
         <span>{rating}</span>
       </div>
       <div className='testimonial-profile'>
@@ -16,7 +16,7 @@ export const TestimonialsCard = ({ data }) => {
         <p>{bio}</p>
       </div>
       <div>
-        <p>Review</p>
+        <p className='lead-text'>Review</p>
         <p>{review}</p>
       </div>
     </aside>

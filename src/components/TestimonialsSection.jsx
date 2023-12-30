@@ -6,9 +6,9 @@ import { testimonials } from '../assets/json/testimonials'
 export const TestimonialsSection = () => {
   return (
       <section className='testimonial-section'>
-          <p className='testimonial-top'>
-              <h2>Testimonials</h2>
-        </p>
+      <h2 className='testimonial-top'>
+        Testimonials
+        </h2>
         <div className='testimonials'>
           {testimonials.map((testimonial, index) => {
             return <TestimonialsCard key={index} data={testimonial} />

@@ -1,17 +1,18 @@
 import React from 'react'
 import './styles.css'
+import { Link } from 'react-router-dom'
 
 export const Nav = () => {
   return (
       <nav className='top-nav'>
           <img src='/assets/images/Logo.svg' alt='Little Lemon Logo' className='top-nav-logo'/>
           <ul className='top-nav-links section-title'>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">About</a></li>
-                <li><a href="/">Menu</a></li>
-                <li><a href="/">Reservations</a></li>
-                <li><a href="/">Order Online</a></li>
-                <li><a href="/">Log In</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/">About</Link></li>
+                <li><Link to="/">Menu</Link></li>
+                <li><Link to="/bookings">Reservations</Link></li>
+                <li><Link to="/">Order Online</Link></li>
+                <li><Link to="/">Log In</Link></li>
       </ul>
       <img src='/assets/icons/Hamburger_Menu.svg' alt='Menu button' className='top-nav-menu-button'/>
     </nav>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './styles.css'
 
 export const Footer = () => {
@@ -7,12 +8,12 @@ export const Footer = () => {
       <section className='footer-logo-links'>
         <img src="/assets/images/logo_footer.png" alt="little lemon logo" />
               <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">About</a></li>
-                <li><a href="/">Menu</a></li>
-                <li><a href="/">Reservations</a></li>
-                <li><a href="/">Order Online</a></li>
-                <li><a href="/">Log In</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/">About</Link></li>
+                <li><Link to="/">Menu</Link></li>
+                <li><Link to="/bookings">Reservations</Link></li>
+                <li><Link to="/">Order Online</Link></li>
+                <li><Link to="/">Log In</Link></li>
               </ul>
           </section>
           <section>
