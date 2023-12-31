@@ -1,41 +1,14 @@
-import React, { useState, useReducer, useEffect } from 'react';
-
-  const availableTimesReducer = (state, action) => {
-  switch (action.type) {
-    case 'UPDATE_TIMES':
-      return action.times;
-    default:
-      return state;
-  }
-};
+import React, { useState } from 'react';
 
 export const BookingForm = ({availableTimes, setAvailableTimes}) => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('17:00');
   const [numberOfGuests, setNumberOfGuests] = useState(1);
   const [selectedOccasion, setSelectedOccasion] = useState('Birthday');
-  const [timesState, dispatchTimes] = useReducer(availableTimesReducer, availableTimes);
-
-    const updateTimes = (newDate) => {
-    const newTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-    dispatchTimes({ type: 'UPDATE_TIMES', times: newTimes });
-    };
-
-    const initializeTimes = () => {
-    const initialTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-    dispatchTimes({ type: 'UPDATE_TIMES', times: initialTimes });
-    };
-
-    useEffect(() => {
-    initializeTimes();
-  }, []);
-
 
 
   const handleDateChange = (event) => {
-    const newDate = event.target.value;
-    setSelectedDate(newDate);
-    updateTimes(newDate);
+    setSelectedDate(event.target.value);
   };
 
   const handleTimeChange = (event) => {

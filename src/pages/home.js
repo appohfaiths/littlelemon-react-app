@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header, Main, AboutSection } from '../components'
 
-function Home({ availableTimes, setAvailableTimes}) {
+function Home() {
   return (
     <>
         <Header />
