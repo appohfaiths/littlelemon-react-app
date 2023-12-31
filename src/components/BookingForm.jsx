@@ -35,6 +35,8 @@ export const BookingForm = ({availableTimes, setAvailableTimes}) => {
   };
 
   return (
+    <>
+      <h1>Book Now</h1>
     <form className='booking-form' onSubmit={handleSubmit}>
       <label htmlFor="res-date">Choose date</label>
       <input type="date" id="res-date" value={selectedDate} onChange={handleDateChange} />
@@ -57,5 +59,6 @@ export const BookingForm = ({availableTimes, setAvailableTimes}) => {
 
       <input type="submit" value="Make Your reservation" />
     </form>
+    </>
   );
 };
