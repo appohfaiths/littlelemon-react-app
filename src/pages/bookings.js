@@ -1,10 +1,10 @@
 import React from 'react'
 import { BookingForm } from '../components'
 
-function Bookings() {
+function Bookings({ availableTimes, setAvailableTimes}) {
   return (
     <>
-      <BookingForm />
+      <BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}/>
     </>
   )
 }
