@@ -7,8 +7,15 @@ export const BookingForm = ({availableTimes, setAvailableTimes}) => {
   const [selectedOccasion, setSelectedOccasion] = useState('Birthday');
 
 
-  const handleDateChange = (event) => {
-    setSelectedDate(event.target.value);
+   const handleDateChange = (event) => {
+    const newDate = event.target.value;
+    setSelectedDate(newDate);
+
+    // Dispatch the state change with the new date
+    setAvailableTimes({
+      type: 'UPDATE_TIMES',
+      date: newDate,
+    });
   };
 
   const handleTimeChange = (event) => {
