@@ -12,7 +12,7 @@ export const updateTimesReducer = (state, action) => {
   }
 };
 
-const initializeTimes = (initialAvailableTimes) => [
+export const initializeTimes = (initialAvailableTimes) => [
   ...initialAvailableTimes,
   ...fetchAPI(new Date()),
 ];
