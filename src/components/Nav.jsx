@@ -1,11 +1,18 @@
 import React from 'react'
 import './styles.css'
 import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 export const Nav = () => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/');
+  }
   return (
       <nav className='top-nav'>
-          <img src='/assets/images/Logo.svg' alt='Little Lemon Logo' className='top-nav-logo'/>
+          <img src='/assets/images/Logo.svg' alt='Little Lemon Logo' className='top-nav-logo' onClick={handleClick}/>
           <ul className='top-nav-links section-title'>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/">About</Link></li>
