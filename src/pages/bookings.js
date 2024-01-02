@@ -1,7 +1,9 @@
 import React, { useReducer } from 'react'
 import { BookingForm } from '../components'
+import { fetchAPI, submitAPI } from '../utils/api';
+import { useNavigate } from "react-router-dom";
 
-export const updateTimes = (state, action) => {
+export const updateTimesReducer = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
       return action.times;
@@ -10,18 +12,35 @@ export const updateTimes = (state, action) => {
   }
 };
 
-export const initializeTimes = () => {
-      const initialTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-      return initialTimes;
-    };
+const initializeTimes = (initialAvailableTimes) => [
+  ...initialAvailableTimes,
+  ...fetchAPI(new Date()),
+];
+
+export const updateTimes = (availableTimes, date) => {
+  const response = fetchAPI(new Date(date));
+  console.log(response);
+  return (response.length !== 0) ? response : availableTimes;
+};
 
 function Bookings() {
+  // const [date, setDate] = React.useState(new Date().toISOString().split('T')[0]);
+  const navigate = useNavigate();
 
-  const [availableTimes, dispatchTimes] = useReducer(updateTimes, initializeTimes())
+    function submitForm(formData) {
+    const isSubmitted = submitAPI(formData);
+
+    if (isSubmitted) {
+      navigate("/confirmedbooking");
+    }
+  }
+
+
+  const [availableTimes, dispatchTimes] = useReducer(updateTimes, initializeTimes([]))
 
   return (
     <>
-      <BookingForm availableTimes={availableTimes} setAvailableTimes={dispatchTimes}/>
+      <BookingForm availableTimes={availableTimes} setAvailableTimes={dispatchTimes} submitForm={submitForm}/>
     </>
   )
 }

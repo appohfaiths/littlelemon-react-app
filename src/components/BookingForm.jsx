@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const BookingForm = ({availableTimes, setAvailableTimes}) => {
+export const BookingForm = ({availableTimes, setAvailableTimes, submitForm}) => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('17:00');
   const [numberOfGuests, setNumberOfGuests] = useState(1);
@@ -9,7 +9,7 @@ export const BookingForm = ({availableTimes, setAvailableTimes}) => {
 
    const handleDateChange = (event) => {
     const newDate = event.target.value;
-    setSelectedDate(newDate);
+     setSelectedDate(newDate);
 
     // Dispatch the state change with the new date
     setAvailableTimes({
@@ -33,6 +33,12 @@ export const BookingForm = ({availableTimes, setAvailableTimes}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    submitForm({
+      date: selectedDate,
+      time: selectedTime,
+      guests: numberOfGuests,
+      occasion: selectedOccasion,
+    });
   };
 
   return (

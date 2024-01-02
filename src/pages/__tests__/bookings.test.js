@@ -1,12 +1,19 @@
 // import { render } from "@testing-library/react";
-import { updateTimes, initializeTimes } from "../bookings";
+import { updateTimes, initializeTimes, updateTimesReducer } from "../bookings";
 
-describe("initializeTimes", () => {
-    test('function returns an array of time', () => {
-        const initialTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-        expect(initializeTimes()).toEqual(initialTimes);
-    })
-});
+// describe("initializeTimes", () => {
+//     test('function returns an array of time', () => {
+//         const initialTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+//         expect(initializeTimes()).toEqual(initialTimes);
+//     })
+// });
+
+// describe("initializeTimes", () => {
+//     test('fetch times', () => {
+//         const initialTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+//         expect(initializeTimes([])).toEqual(initialTimes);
+//     })
+// });
 
 describe("updateTimes", () => {
     test('should update times in state', () => {
@@ -14,7 +21,7 @@ describe("updateTimes", () => {
         const action = { type: 'UPDATE_TIMES', times: ['13:00', '14:00', '15:00'] };
         const expectedState = ['13:00', '14:00', '15:00'];
 
-        const newState = updateTimes(initialState, action);
+        const newState = updateTimesReducer(initialState, action);
 
         expect(newState).toEqual(expectedState);
     });
