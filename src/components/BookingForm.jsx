@@ -62,24 +62,24 @@ export const BookingForm = ({availableTimes, setAvailableTimes, submitForm}) => 
     <>
       <h1>Book Now</h1>
     <form className='booking-form' data-testid="booking-form" onSubmit={handleSubmit}>
-      <label htmlFor="res-date">Choose date</label>
+      <label htmlFor="res-date" aria-label="Select date">Choose date</label>
       <input type="date" id="res-date" value={selectedDate} onChange={handleDateChange} required/>
 
-      <label htmlFor="res-time">Choose time</label>
+      <label htmlFor="res-time" aria-label="Select time">Choose time</label>
       <select id="res-time" value={selectedTime} onChange={handleTimeChange} required>
         {availableTimes.map((time, index) => (
           <option key={index} value={time}>{time}</option>
         ))}
       </select>
 
-      <label htmlFor="guests">Number of guests</label>
+      <label htmlFor="guests" aria-label="Select number of guests">Number of guests</label>
       <input type="number" placeholder="1" min="1" max="10" id="guests" value={numberOfGuests} onChange={handleGuestsChange} required/>
 
-      <label htmlFor="occasion">Occasion</label>
+      <label htmlFor="occasion" aria-label="Select occasion">Occasion</label>
       <select id="occasion" value={selectedOccasion} onChange={handleOccasionChange} required>
-        <option value="Birthday">None</option>
-        <option value="Birthday">Birthday</option>
-        <option value="Anniversary">Anniversary</option>
+        <option value="None" aria-label="None">None</option>
+        <option value="Birthday" aria-label="Birthday">Birthday</option>
+        <option value="Anniversary"  aria-label="Anniversary">Anniversary</option>
       </select>
 
       <input type="submit" value="Make Your reservation" data-testid='submit-button' disabled={!formIsValid}/>
