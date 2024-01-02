@@ -14,6 +14,7 @@ export const BookingForm = ({availableTimes, setAvailableTimes}) => {
     // Dispatch the state change with the new date
     setAvailableTimes({
       type: 'UPDATE_TIMES',
+      times: ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],
       date: newDate,
     });
   };
@@ -43,8 +44,8 @@ export const BookingForm = ({availableTimes, setAvailableTimes}) => {
 
       <label htmlFor="res-time">Choose time</label>
       <select id="res-time" value={selectedTime} onChange={handleTimeChange}>
-        {availableTimes.map((time) => (
-          <option key={time} value={time}>{time}</option>
+        {availableTimes.map((time, index) => (
+          <option key={index} value={time}>{time}</option>
         ))}
       </select>
 
