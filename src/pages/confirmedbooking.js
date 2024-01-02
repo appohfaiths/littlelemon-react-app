@@ -3,7 +3,7 @@ import React from 'react'
 
 function ConfirmedBooking() {
   return (
-      <main>
+      <main className='confirmed-booking'>
           <h1>Booking Confirmed</h1>
           <p>Please provide your name and booking number at the reception upon arrival</p>
           <p>Little Lemon!</p>

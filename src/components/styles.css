@@ -296,7 +296,7 @@
 }
 
 /* Bookings.js */
-.bookings-page {
+.bookings-page, .confirmed-booking {
     display: flex;
     flex-direction: column;
     justify-content: center;
