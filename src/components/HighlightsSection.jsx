@@ -6,16 +6,16 @@ import { CtaButton } from './CtaButton'
 
 export const HighlightsSection = () => {
   return (
-      <section className='highlights-section'>
+      <section className='highlights-section' aria-label='Menu Highlights'>
           <div className='highlights-top'>
               <h2>This weeks specials!</h2>
-              <CtaButton text='online menu' />
+              <CtaButton text='online menu' aria-label='Online Menu Button'/>
         </div>
-        <div className='highlights'>
+        <section className='highlights' aria-label='Highlights Cards Section'>
           {hightlights.map((highlight, index) => {
             return <HighlightsCard key={index} data={highlight} />
           })}
-        </div>
+        </section>
       </section>
   )
 }
