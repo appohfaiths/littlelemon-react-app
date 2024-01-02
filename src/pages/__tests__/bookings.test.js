@@ -1,37 +1,42 @@
 // import { render } from "@testing-library/react";
 import { updateTimes, initializeTimes, updateTimesReducer } from "../bookings";
 
-// describe("initializeTimes", () => {
-//     test('function returns an array of time', () => {
-//         const initialTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-//         expect(initializeTimes()).toEqual(initialTimes);
-//     })
-// });
-
-// describe("initializeTimes", () => {
-//     test('fetch times', () => {
-//         const initialTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-//         expect(initializeTimes([])).toEqual(initialTimes);
-//     })
-// });
-
 describe("updateTimes", () => {
-    test('should update times in state', () => {
-        const initialState = ['10:00', '11:00', '12:00'];
-        const action = { type: 'UPDATE_TIMES', times: ['13:00', '14:00', '15:00'] };
-        const expectedState = ['13:00', '14:00', '15:00'];
-
-        const newState = updateTimesReducer(initialState, action);
-
-        expect(newState).toEqual(expectedState);
+  it("should return updated times if response is not empty", () => {
+    // Arrange
+    const availableTimes = ["10:00", "11:00", "12:00"];
+    const date = "2022-01-01";
+    const response = ["13:00", "14:00", "15:00"];
+    jest.spyOn(global, "fetch").mockResolvedValue({
+      json: jest.fn().mockResolvedValue(response),
     });
 
-    test('should return the same value provided in the state', () => {
-        const initialState = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-        const action = { type: 'UPDATE_TIMES', times: ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'] };
+    // Act
+    const result = updateTimes(availableTimes, date);
 
-        const newState = updateTimes(initialState, action);
+    // Assert
+    expect(result).toEqual(response);
 
-        expect(newState).toEqual(initialState);
+    // Clean up
+    global.fetch.mockRestore();
+  });
+
+  it("should return original times if response is empty", () => {
+    // Arrange
+    const availableTimes = ["10:00", "11:00", "12:00"];
+    const date = "2022-01-01";
+    const response = [];
+    jest.spyOn(global, "fetch").mockResolvedValue({
+      json: jest.fn().mockResolvedValue(response),
     });
+
+    // Act
+    const result = updateTimes(availableTimes, date);
+
+    // Assert
+    expect(result).toEqual(availableTimes);
+
+    // Clean up
+    global.fetch.mockRestore();
+  });
 });

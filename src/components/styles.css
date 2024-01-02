@@ -290,6 +290,15 @@
 /* Booking Form */
 .booking-form {
     display: grid;
-    max-width: 200px;
-    gap: 20px
+    width: 400px;
+    gap: 20px;
+    background-color: var(--secondary-white);
+}
+
+/* Bookings.js */
+.bookings-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

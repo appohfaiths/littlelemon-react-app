@@ -4,7 +4,7 @@ export const BookingForm = ({availableTimes, setAvailableTimes, submitForm}) => 
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('17:00');
   const [numberOfGuests, setNumberOfGuests] = useState(1);
-  const [selectedOccasion, setSelectedOccasion] = useState('Birthday');
+  const [selectedOccasion, setSelectedOccasion] = useState('None');
   const [formIsValid, setFormIsValid] = useState(false);
 
 
@@ -76,7 +76,8 @@ export const BookingForm = ({availableTimes, setAvailableTimes, submitForm}) => 
       <input type="number" placeholder="1" min="1" max="10" id="guests" value={numberOfGuests} onChange={handleGuestsChange} required/>
 
       <label htmlFor="occasion">Occasion</label>
-      <select id="occasion" value={selectedOccasion} onChange={handleOccasionChange}>
+      <select id="occasion" value={selectedOccasion} onChange={handleOccasionChange} required>
+        <option value="Birthday">None</option>
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
       </select>

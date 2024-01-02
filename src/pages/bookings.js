@@ -39,9 +39,9 @@ function Bookings() {
   const [availableTimes, dispatchTimes] = useReducer(updateTimes, initializeTimes([]))
 
   return (
-    <>
+    <main className='bookings-page'>
       <BookingForm availableTimes={availableTimes} setAvailableTimes={dispatchTimes} submitForm={submitForm}/>
-    </>
+    </main>
   )
 }
 
